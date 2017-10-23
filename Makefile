@@ -39,8 +39,8 @@ ENUMS=					# Compiler does have enum type
 #OPTIMIZE=	-Ox -G2			# Optimization Level (MSC, 80286)
 #OPTIMIZE=	-O4			# Optimization Level (generic UNIX)
 #GCCOPTIM=       -O
-OPTIMIZE=       -O2 -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -fomit-frame-pointer # Optimization Level (generic UNIX)
-GCCOPTIM=       -O2 -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -fomit-frame-pointer
+OPTIMIZE=       -O2 -march=armv7-a -mtune=cortex-a8 -mfpu=neon # Optimization Level (generic UNIX)
+GCCOPTIM=       -O2 -march=armv7-a -mtune=cortex-a8 -mfpu=neon
 
 LFLAGS=					#Loader Flags
 
