@@ -22,11 +22,12 @@ PROGS=		msc			# Programs to build (MSC)
 PROGS=		unix			# Programs to build (UNIX)
 
 #TIME_FUNC=	-DMSC_CLOCK		# Use Microsoft clock() for measurement
-#TIME_FUNC=	-DTIME			# Use time(2) for measurement
-TIME_FUNC=	-DTIMES			# Use times(2) for measurement
+TIME_FUNC=	-DTIME			# Use time(2) for measurement
+#TIME_FUNC=	-DTIMES			# Use times(2) for measurement
 #HZ=		50			# Frequency of times(2) clock ticks
-HZ=		60			# Frequency of times(2) clock ticks
+#HZ=		60			# Frequency of times(2) clock ticks
 #HZ=		100			# Frequency of times(2) clock ticks
+HZ=		120			# Frequency of times(2) clock ticks
 #HZ=		1			# Give bogus result unless changed!
 
 STRUCTASSIGN=	-DNOSTRUCTASSIGN	# Compiler cannot assign structs
@@ -35,9 +36,11 @@ STRUCTASSIGN=				# Compiler can assign structs
 ENUMS=		-DNOENUMS		# Compiler doesn't have enum type
 ENUMS=					# Compiler does have enum type
 
-OPTIMIZE=	-Ox -G2			# Optimization Level (MSC, 80286)
-OPTIMIZE=	-O4			# Optimization Level (generic UNIX)
-GCCOPTIM=       -O
+#OPTIMIZE=	-Ox -G2			# Optimization Level (MSC, 80286)
+#OPTIMIZE=	-O4			# Optimization Level (generic UNIX)
+#GCCOPTIM=       -O
+OPTIMIZE=       -O2 -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -fomit-frame-pointer # Optimization Level (generic UNIX)
+GCCOPTIM=       -O2 -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -fomit-frame-pointer
 
 LFLAGS=					#Loader Flags
 
